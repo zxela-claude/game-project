@@ -161,7 +161,7 @@ def cmd_status(args):
         print("no submissions yet")
         return
     last = entries[-1]
-    print(f"Last submission:")
+    print("Last submission:")
     print(f"  cl:     {last.get('cl', '?')}")
     print(f"  status: {last.get('status', '?')}")
     print(f"  ts:     {last.get('ts', '')[:19]}")

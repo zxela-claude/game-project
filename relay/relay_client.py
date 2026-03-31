@@ -3,7 +3,6 @@
 Shared relay client — import this in shells, agents, and the UE bootstrap.
 """
 
-import asyncio
 import json
 import os
 import websockets

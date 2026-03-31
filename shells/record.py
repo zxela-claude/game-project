@@ -16,7 +16,6 @@ import argparse
 import json
 import os
 import sys
-import signal
 from datetime import datetime
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "relay"))
@@ -55,7 +54,7 @@ async def cmd_start(args):
 
     welcome = await client.connect()
     print(f"Recording room '{args.room}' → {out_path}")
-    print(f"Ctrl+C to stop\n")
+    print("Ctrl+C to stop\n")
 
     try:
         await client.listen()

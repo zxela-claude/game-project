@@ -22,9 +22,7 @@ import json
 import os
 import subprocess
 import sys
-import time
 from datetime import datetime
-from typing import Optional
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "relay"))
 
@@ -209,7 +207,7 @@ async def gate4_smoke(cl_data: dict, room: str = "main") -> GateResult:
     ]
 
     if crashes:
-        return GateResult("4_smoke", False, f"crash detected during PIE smoke test",
+        return GateResult("4_smoke", False, "crash detected during PIE smoke test",
                           {"crash_events": crashes[:3]})
     return GateResult("4_smoke", True, f"PIE ran {PIE_TIMEOUT}s without crash")
 

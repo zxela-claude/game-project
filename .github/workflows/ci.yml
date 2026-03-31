@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install websockets pytest pytest-asyncio ruff
+
+      - name: Lint (ruff)
+        run: ruff check relay/ shells/ cl/ validator/ --ignore E501,E741,F841,E701
+
+      - name: Test — relay server starts and accepts connections
+        run: pytest tests/ -v --timeout=15
+        if: always()

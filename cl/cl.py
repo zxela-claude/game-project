@@ -25,7 +25,6 @@ import os
 import sys
 import uuid
 import asyncio
-import subprocess
 from datetime import datetime
 from typing import Optional
 
