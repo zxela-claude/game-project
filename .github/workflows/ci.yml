@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install websockets pytest pytest-asyncio ruff
+          pip install websockets pytest pytest-asyncio pytest-timeout ruff
 
       - name: Lint (ruff)
         run: ruff check relay/ shells/ cl/ validator/ --ignore E501,E741,F841,E701
