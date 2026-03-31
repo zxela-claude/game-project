@@ -8,3 +8,9 @@ sessions/snapshots/
 dist/
 build/
 .env
+journal/*.jsonl
+journal/recordings/
+journal/bisect.json
+__pycache__/
+*.pyc
+.env
